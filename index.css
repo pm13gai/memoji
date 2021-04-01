@@ -14,7 +14,10 @@ body{
 .content{
 	padding-top: 40px;
 	display: grid;
-	justify-content: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	grid-template-columns: 130px 130px 130px 130px;
 	grid-template-rows: 130px 130px 130px;
 	grid-gap: 25px;
@@ -60,7 +63,8 @@ body{
 	display: none;
 }
 .card{
-	perspective: 600px;
+	-webkit-perspective: 600px;
+	        perspective: 600px;
 }
 
 /*.type:checked+label .flipper{
@@ -106,7 +110,8 @@ body{
 	left: 27px;
 }*/
 .type:checked+label .flipper{
-	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	        transform: rotateY(180deg);
 }
 /*.type:checked+label .back{
 	transform: rotateY(180deg);
@@ -117,17 +122,24 @@ body{
 	height: 130px;
 	border-radius: 9px;
 	background: #fff;
-	box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+	        box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 
-	transform-style: preserve-3d;
-	backface-visibility: hidden;
+	-webkit-transform-style: preserve-3d;
+
+	        transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+	        backface-visibility: hidden;
 	position: absolute;
 	top: 0;
 	left: 0;
 }
 .flipper{
+	-webkit-transition: 1s;
+	-o-transition: 1s;
 	transition: 1s;
-	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	        transform-style: preserve-3d;
 	position: relative;
 }
 .front{
@@ -140,10 +152,13 @@ body{
 	width: 120px;
 	height: 120px;
 	border-radius: 9px;
+	background: -webkit-gradient(linear, right top, left bottom, from(#19668D), to(#22AB93));
+	background: -o-linear-gradient(top right, #19668D, #22AB93);
 	background: linear-gradient(to bottom left, #19668D, #22AB93);
 }
 .back{
-	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	        transform: rotateY(180deg);
 }
 .back_em{
 	position: relative;
@@ -199,13 +214,21 @@ body{
 	top: 342px;
 	z-index: 100;
 	min-width: 350px;
-	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	    -ms-transform: translate(-50%,-50%);
+	        transform: translate(-50%,-50%);
 	background-color: #fff;
 
 }
 .result{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	/*align-items: baseline;*/
 	padding-top: 30px;
 	font-size: 48px;
@@ -215,23 +238,31 @@ body{
 	/*text-align: center;*/
 	color: #434344;
 }
+@-webkit-keyframes jump{
+	50%{-webkit-transform: translateY(20px) scaleY(0.7);transform: translateY(20px) scaleY(0.7);}
+    100%{-webkit-transform: translateY(0px) scaleY(1);transform: translateY(0px) scaleY(1);}
+}
 @keyframes jump{
-	50%{transform: translateY(20px) scaleY(0.7);}
-    100%{transform: translateY(0px) scaleY(1);}
+	50%{-webkit-transform: translateY(20px) scaleY(0.7);transform: translateY(20px) scaleY(0.7);}
+    100%{-webkit-transform: translateY(0px) scaleY(1);transform: translateY(0px) scaleY(1);}
 }
 
 .res1{
     /*transform: scale(0.2,0.2);*/
-    animation: jump 1s infinite linear;
+    -webkit-animation: jump 1s infinite linear;
+            animation: jump 1s infinite linear;
 }
 .res2{
-    animation: jump 1s infinite 0.3s linear;
+    -webkit-animation: jump 1s infinite 0.3s linear;
+            animation: jump 1s infinite 0.3s linear;
 }
 .res3{
-    animation: jump 1s infinite 0.6s linear;
+    -webkit-animation: jump 1s infinite 0.6s linear;
+            animation: jump 1s infinite 0.6s linear;
 }
 .res4{
-    animation: jump 1s infinite 0.9s linear;
+    -webkit-animation: jump 1s infinite 0.9s linear;
+            animation: jump 1s infinite 0.9s linear;
 }
 
 
@@ -241,15 +272,29 @@ body{
 .again_button{
 	position: relative;
 	left: 50%;
-	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	    -ms-transform: translateX(-50%);
+	        transform: translateX(-50%);
+	display: -webkit-inline-box;
+	display: -webkit-inline-flex;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	height: 40px;
 	border-radius: 8px;
 	margin: 40px 0 30px 0;
+	background: -webkit-gradient(linear,left top, right top,from(#19668D), to(#22AB93));
+	background: -o-linear-gradient(left,#19668D, #22AB93);
 	background: linear-gradient(to right,#19668D, #22AB93);
-	box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+	        box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 	
 	
 }
